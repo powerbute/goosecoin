@@ -267,7 +267,7 @@ export default function HomePage() {
       <div className='hidden text-white z-[2] bg-gradient-to-b from-dark3 from-70% to-transparent absolute top-0 left-0 w-full h-96'>
       </div>
       {numbers.map((num: any) => num)}
-      <section className='z-[3] relative bg-dark flex flex-col justify-between min-w-screen h-full pt-2 pb-8 mx-auto text-white xl:w-[1280px]'>
+      <section className='z-[3] relative bg-dark flex flex-col justify-between min-w-screen h-full pt-2 pb-12 mx-auto text-white xl:w-[1280px]'>
         <LandingHeader passport={{ authData }} />
         <section className='px-4 mt-4 flex flex-col justify-between h-full'>
           <div className='flex flex-col gap-4 items-center'>
