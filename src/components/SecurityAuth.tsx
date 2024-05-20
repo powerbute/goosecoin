@@ -26,11 +26,11 @@ export default function SecurityAuth({ authData }: { authData: { data: any, setD
       .eq("session", session)
       .single();
     if (sessionsErr != null) {
-      //router.push("/auth")
+      router.push("https://id.gooseland.cc/authinapp?app=coin.gooseland.cc")
       return;
     }
     if (sessions?.passid == null) {
-      //router.push("/auth")
+      router.push("https://id.gooseland.cc/authinapp?app=coin.gooseland.cc")
       return;
     }
     const { data: userData, error: userDataErr } = await supabase
@@ -39,7 +39,7 @@ export default function SecurityAuth({ authData }: { authData: { data: any, setD
       .eq("passid", sessions?.passid)
       .single();
     if (userData == null) {
-      //router.push("/auth")
+      router.push("https://id.gooseland.cc/authinapp?app=coin.gooseland.cc")
       return;
     }
     authData.setData(userData)

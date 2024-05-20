@@ -42,7 +42,7 @@ export default function Passport({ passport }: { passport: { authData: any } }) 
                   window.open("/", "_self")
                 }}><MdLogout color='white' size={28} /></div></>
               : <div className='bg-green-500 hover:bg-green-600 rounded-2xl w-10 h-10 flex justify-center items-center cursor-pointer' onClick={() => {
-                window.open("https://id.gooseland.cc/authinapp?app=vote.gooseland.cc", "_self")
+                window.open("https://id.gooseland.cc/authinapp?app=coin.gooseland.cc", "_self")
               }}><MdLogin color='white' size={28} /></div>}
             {session != "" ? <div className='w-14 h-14 cursor-pointer'>
               <NextImage onError={(e) => {
