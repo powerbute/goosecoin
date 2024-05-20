@@ -1,0 +1,57 @@
+{passport.authData?.id != passport.userID && !(userData?.passid == "LGS-P7nX10" || userData?.passid == "LGS-49fb3e") ?
+                    <>
+                      {checkSub() == true ? <div className="flex md:hidden select-none w-full bg-blue-500 hover:bg-blue-600 cursor-pointer p-1 rounded-2xl md:mt-4 flex justify-center text-lg font-bold" onClick={() => {
+                        sub();
+                      }}>Вы подписаны</div> :
+                        <div className="flex md:hidden select-none w-full bg-dark4 hover:bg-dark3 cursor-pointer p-1 rounded-2xl flex justify-center md:mt-4 text-lg font-bold" onClick={() => {
+                          sub();
+                        }}>Подписаться</div>}
+                    </>
+                    : null}
+                  {(userData?.passid == "LGS-P7nX10" || userData?.passid == "LGS-49fb3e") ?
+                    <div className="flex md:hidden select-none w-full bg-gradient-to-br from-[#FFD700] to-yellow-600 cursor-not-allowed p-1 rounded-2xl md:mt-4 flex justify-center text-lg font-bold">Вы подписаны</div>
+                    : null}
+
+
+
+
+<div className="flex justify-between flex-col md:flex-row">
+              <div className='flex gap-2 md:gap-0 md:flex-col'>
+                <div className={"relative w-fit rounded-2xl " + getColor()}>
+                  <NextImage onError={(e) => {
+                    e.currentTarget.srcset = "/Steve.webp";
+                  }} width={128} height={128} alt='profile avatar' src={'https://avatar.spworlds.ru/bust/512/' + (userData?.nickname)} />
+                </div>
+                <div className='flex flex-col mt-2'>
+                  <div className='font-bold text-3xl'>{userData?.surname}</div>
+                  <div className='font-medium text-zinc-400 text-xl'>{userData?.nickname}</div>
+                  <div className='text-zinc-500 flex gap-2 items-center'>@user{passport.userID} <span className="cursor-pointer" onClick={() => {
+                    navigator.clipboard.writeText("https://id.gooseland.cc/user/" + passport.userID);
+                    alert("Ссылка скопирована!")
+                  }}><MdOutlineContentCopy /></span></div>
+                </div>
+              </div>
+              <div className="mt-1.5 md:mt-0 flex w-full gap-2 flex-col">
+                <div className="flex justify-end gap-2">
+                  <LikeCompoennt passport={{ authData: passport.authData, userData: userData }} />
+                </div>
+              </div>
+            </div>
+            <div className='flex flex-wrap gap-1 select-none'>
+              {userData?.roles?.map((e: any) =>
+                <div key={makeid(5)} className={'rounded-md px-2 py-0.5 bg-' + (rolesData[e - 1]?.color)}>{rolesData[e - 1]?.name}</div>
+              )}
+            </div>
+            {passport.authData?.id != passport.userID && !(userData?.passid == "LGS-P7nX10" || userData?.passid == "LGS-49fb3e") ?
+              <>
+                {checkSub() == true ? <div className="hidden md:flex select-none bg-blue-500 hover:bg-blue-600 cursor-pointer p-2 rounded-2xl md:mt-4 flex justify-center text-lg font-bold" onClick={() => {
+                  sub();
+                }}>Вы подписаны</div> :
+                  <div className="hidden md:flex select-none bg-dark4 hover:bg-dark3 cursor-pointer p-2 rounded-2xl flex justify-center md:mt-4 text-lg font-bold" onClick={() => {
+                    sub();
+                  }}>Подписаться</div>}
+              </>
+              : null}
+            {(userData?.passid == "LGS-P7nX10" || userData?.passid == "LGS-49fb3e") ?
+              <div className="hidden md:flex select-none w-full bg-gradient-to-br from-[#FFD700] to-yellow-600 cursor-not-allowed p-1 rounded-2xl md:mt-4 flex justify-center text-lg font-bold">Вы подписаны</div>
+              : null}
