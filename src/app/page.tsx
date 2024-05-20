@@ -267,18 +267,18 @@ export default function HomePage() {
       <div className='hidden text-white z-[2] bg-gradient-to-b from-dark3 from-70% to-transparent absolute top-0 left-0 w-full h-96'>
       </div>
       {numbers.map((num: any) => num)}
-      <section className='z-[3] relative bg-dark flex flex-col justify-between min-w-screen h-full pt-8 pb-4 mx-auto text-white xl:w-[1280px]'>
+      <section className='z-[3] relative bg-dark flex flex-col justify-between min-w-screen h-full pt-2 pb-4 mx-auto text-white xl:w-[1280px]'>
         <LandingHeader passport={{ authData }} />
-        <section className='px-4 mt-16 flex flex-col justify-between h-full'>
-          <div className='flex flex-col gap-8 items-center'>
+        <section className='px-4 mt-4 flex flex-col justify-between h-full'>
+          <div className='flex flex-col gap-4 items-center'>
             <div className='flex flex-col gap-3 items-center'>
               <div className='text-5xl font-black'>{new Intl.NumberFormat('en-US').format(userData?.coins)}</div>
               <div className='font-semibold text-lg'>{getMesto()} место</div>
             </div>
-            <div onClick={() => click()} className={'flex items-center justify-center p-8 rounded-full ' + (isClicked ? "bg-blue-600 w-[23.5rem] h-[23.5rem]" : "bg-blue-500 w-96 h-96")}>
+            <div onClick={() => click()} className={'flex items-center justify-center p-8 rounded-full ' + (isClicked ? "bg-blue-600 w-[18rem] h-[18rem]" : "bg-blue-500 w-[19rem] h-[19rem]")}>
               <div className={'flex items-center justify-center w-full h-full rounded-full ' + (isClicked ? "bg-blue-500" : "bg-blue-400")}>
                 <div className='hidden w-48 pl-2'><GroshCoin /></div>
-                <div><GiGoose size={200} /></div>
+                <div><GiGoose size={128} /></div>
               </div>
             </div>
           </div>
