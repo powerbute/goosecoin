@@ -201,7 +201,7 @@ export default function HomePage() {
   }
 
   async function getReward() {
-    if (moment(userData.rewardlvl).add(1, 'days').toDate() < new Date() || userData?.rewardlvl == null) {
+    /*if (moment(userData.rewardlvl).add(1, 'days').toDate() < new Date() || userData?.rewardlvl == null) {
       const { data: userData1, error: userErr } = await supabase
         .from('users')
         .select()
@@ -213,7 +213,7 @@ export default function HomePage() {
         .eq("id", authData?.id)
     } else {
       alert(moment(userData.rewardlvl).add(1, 'days').fromNow())
-    }
+    }*/
   }
 
   async function update(userID: any) {
@@ -267,7 +267,7 @@ export default function HomePage() {
       <div className='hidden text-white z-[2] bg-gradient-to-b from-dark3 from-70% to-transparent absolute top-0 left-0 w-full h-96'>
       </div>
       {numbers.map((num: any) => num)}
-      <section className='z-[3] relative bg-dark flex flex-col justify-between min-w-screen h-full pt-2 pb-12 mx-auto text-white xl:w-[1280px]'>
+      <section className='z-[3] relative bg-dark flex flex-col justify-between min-w-screen h-full pt-2 pb-8 mx-auto text-white xl:w-[1280px]'>
         <LandingHeader passport={{ authData }} />
         <section className='px-4 mt-4 flex flex-col justify-between h-full'>
           <div className='flex flex-col gap-4 items-center'>
@@ -337,7 +337,8 @@ export default function HomePage() {
               </div>
               <div className='flex items-center gap-2 text-3xl font-black'>{userData?.recovlvl} / 10</div>
             </div>
-            <div onClick={() => getReward()} className='bg-dark5 flex justify-between hover:bg-dark4 cursor-pointer rounded-2xl p-4 select-none'>
+            <div>Ежедневки отключены, потому что артох хуесос</div>
+            <div onClick={() => getReward()} className='bg-dark5 hidden justify-between hover:bg-dark4 cursor-pointer rounded-2xl p-4 select-none'>
               <div className='flex flex-col'>
                 <div className='text-xl font-bold'>Ежедневная награда</div>
                 <div className='flex gap-2 text-lg items-center'>
