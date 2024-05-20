@@ -203,14 +203,14 @@ export default function Clicker({ app }: { app: { userData: any, setUserData: an
             <div className='text-5xl font-black'>{new Intl.NumberFormat('en-US').format(app.userData?.coins)}</div>
             <div className='font-semibold text-lg'>{getMesto()} место</div>
           </div>
-          <div onClick={() => click()} className={'flex items-center justify-center p-8 rounded-full ' + (app.isClicked ? "bg-blue-600 w-[16rem] h-[16rem]" : "bg-blue-500 w-[17rem] h-[17rem]")}>
+          <div onClick={() => click()} className={'flex items-center justify-center p-6 rounded-full ' + (app.isClicked ? "bg-blue-600 w-[14rem] h-[14rem]" : "bg-blue-500 w-[14.5rem] h-[14.5rem]")}>
             <div className={'flex items-center justify-center w-full h-full rounded-full ' + (app.isClicked ? "bg-blue-500" : "bg-blue-400")}>
               <div><GiGoose size={128} /></div>
             </div>
           </div>
         </div>
         <div className='flex flex-col gap-4'>
-          <div className='flex items-center gap-2 text-lg font-bold'><FaBoltLightning color='gold' />{app.userData?.energy} / {1000}</div>
+          <div className='flex items-center gap-2 text-lg font-bold select-none'><FaBoltLightning color='gold' />{app.userData?.energy} / {1000}</div>
           <div className='w-full bg-dark4 p-2 rounded-2xl relative'>
             <div className='h-4 rounded-2xl bg-blue-500 absolute top-0 left-0' style={{ width: (app.userData?.energy / 1000) * 100 + "%" }}></div>
           </div>

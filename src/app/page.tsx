@@ -105,10 +105,8 @@ export default function HomePage() {
       <Head>
         <title>Hi</title>
       </Head>
-      <div className='hidden text-white z-[2] bg-gradient-to-b from-dark3 from-70% to-transparent absolute top-0 left-0 w-full h-96'>
-      </div>
-      {numbers.map((num: any) => num)}
-      <section className='z-[3] relative bg-dark flex flex-col justify-between min-w-screen h-full pt-2 pb-8 mx-auto text-white xl:w-[1280px]'>
+      <div className='w-screen h-screen overflow-hidden absolute'>{numbers.map((num: any) => num)}</div>
+      <section className='z-[3] relative bg-dark flex flex-col justify-between min-w-screen h-full pt-2 pb-2 mx-auto text-white xl:w-[1280px]'>
         <LandingHeader passport={{ authData }} />
         <Clicker app={{ userData: userData, setUserData: setUserData, session: session, supabase: supabase, isClicked: isClicked, setIsClicked: setIsClicked, authData: authData, energy: energy, setEnergy: setEnergy, userRating: userRating, setUserRating: setUserRating, subPage: subPage, setSubPage: setSubPage, setRatingMesto: setRatingMesto, setLoaded: setLoaded, addFloatingNumber: addFloatingNumber }} />
       </section>
